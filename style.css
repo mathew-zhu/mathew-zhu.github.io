@@ -3,27 +3,32 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #333;
-    background: #fff;
+    /* 极浅青蓝渐变背景 */
+    background: linear-gradient(180deg, #e6fdff 0%, #f2ffff 45%, #ffffff 100%);
     line-height: 1.7;
 }
-a { color: #3050F9; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: #519ab2; text-decoration: none; }
+a:hover { color: #2fa8d0; }
 
-/* 大容器：左（低调侧边栏）+ 右（内容主体） */
+/* 大容器：左（侧边栏）+ 右（内容），整体居中 */
 .wrapper {
     display: flex;
     min-height: 100vh;
-    max-width: 1150px;   /* 整个「侧边栏+内容」区块限宽，不再撑满整屏 */
-    margin: 0 auto;      /* 整体在屏幕里水平居中 */
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #fff;
+    /* 淡淡的青蓝投影 */
+    box-shadow: 0 0 40px rgba(81, 154, 178, 0.10);
 }
 
-/* ============ ① 左侧侧边栏（浅色、低调） ============ */
+/* ============ ① 左侧侧边栏 ============ */
 .sidebar {
     width: 270px;
     flex-shrink: 0;
-    background: #f8f9fb;               /* 浅灰底，不抢眼 */
-    border-right: 1px solid #eef0f4;
-    padding: 48px 26px;
+    background: linear-gradient(180deg, #e6f4f1 0%, #eefaf8 100%);
+    border-right: 1px solid #d7ece9;
+    border-top: 5px solid #2fa8d0;   /* 顶部亮青蓝装饰条 */
+    padding: 40px 26px;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -34,19 +39,19 @@ a:hover { text-decoration: underline; }
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #e2e5ea;
+    border: 3px solid #2fa8d0;        /* 亮青蓝头像描边 */
     display: block;
     margin: 0 auto 18px;
 }
 .sidebar h1 {
     font-size: 1.5em;
     text-align: center;
-    color: #1a1a2e;
+    color: #519ab2;                    /* 钢蓝 */
     margin-bottom: 6px;
 }
 .sidebar .affiliation {
     text-align: center;
-    color: #777;
+    color: #5f7f8c;
     font-size: 0.88em;
     margin-bottom: 18px;
 }
@@ -58,22 +63,22 @@ a:hover { text-decoration: underline; }
     margin-bottom: 22px;
 }
 .sidebar .social a {
-    color: #555;
-    border: 1px solid #d8dce3;
+    color: #519ab2;
+    border: 1px solid #9fd8e6;        /* 青蓝描边按钮 */
     border-radius: 4px;
     padding: 3px 11px;
     font-size: 0.82em;
 }
 .sidebar .social a:hover {
-    background: #3050F9;
-    border-color: #3050F9;
+    background: #2fa8d0;
+    border-color: #2fa8d0;
     color: #fff;
     text-decoration: none;
 }
 .sidebar .bio {
-    color: #888;
+    color: #6a8a95;
     font-size: 0.86em;
-    border-top: 1px solid #eef0f4;
+    border-top: 1px solid #d7ece9;
     padding-top: 16px;
 }
 
@@ -90,7 +95,7 @@ a:hover { text-decoration: underline; }
     position: sticky;
     top: 0;
     background: #fff;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #d9edf2;
     padding: 14px 40px;
     display: flex;
     gap: 24px;
@@ -105,29 +110,30 @@ a:hover { text-decoration: underline; }
     border-bottom: 2px solid transparent;
 }
 .topnav a:hover {
-    color: #3050F9;
-    border-bottom-color: #3050F9;
+    color: #2fa8d0;
+    border-bottom-color: #2fa8d0;
     text-decoration: none;
 }
 .topnav a.active {
-    color: #3050F9;
-    border-bottom-color: #3050F9;
+    color: #519ab2;
+    border-bottom-color: #2fa8d0;
 }
 
 /* 正文内容 */
 .content {
-    width: 100%;          /* 充满内容区，不再被 800px 卡在左边 */
+    width: 100%;
     padding: 40px 48px 64px;
 }
+/* 标题：左侧亮青蓝竖条装饰 */
 .content h2 {
-    color: #1a1a2e;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 6px;
+    color: #519ab2;
+    border-left: 4px solid #2fa8d0;
+    padding-left: 12px;
     margin: 36px 0 14px;
 }
 .content h2:first-child { margin-top: 0; }
 
-/* 列表：蓝色圆点 */
+/* 列表：亮青蓝圆点 */
 .content ul {
     list-style: none;
     padding-left: 0;
@@ -145,7 +151,7 @@ a:hover { text-decoration: underline; }
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #3050F9;
+    background: #2fa8d0;
 }
 
 /* 经历标题 + 日期横排 */
@@ -157,12 +163,89 @@ a:hover { text-decoration: underline; }
     flex-wrap: wrap;
     margin-top: 20px;
 }
-.exp-title, .edu-school { font-weight: bold; color: #1a1a2e; }
-.exp-date, .edu-date { color: #999; white-space: nowrap; }
+.exp-title { font-weight: bold; color: #519ab2; }
+.edu-school { font-weight: bold; color: #222; font-size: 1.25em; }
+.edu-degree { color: #555; font-size: 0.98em; margin: 2px 0; }
+.exp-date { color: #999; white-space: nowrap; }
+.edu-date { color: #2fa8d0; white-space: nowrap; }
 .exp-org { color: #666; font-size: 0.95em; font-style: italic; margin: 2px 0 6px; }
 .award-item { margin-bottom: 12px; }
 .award-detail { color: #666; }
 .skill-category { margin-bottom: 10px; }
+
+/* ============ 时间轴（左侧图标 + 点线串联） ============ */
+.timeline {
+    position: relative;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+}
+/* 垂直主线 */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 25px;                    /* 对齐图标圆心（50px / 2） */
+    top: 14px;
+    bottom: 14px;
+    width: 2px;
+    background: linear-gradient(180deg, #2fa8d0 0%, #9fd8e6 100%);
+}
+/* 单条时间轴（如 Education 只有一项）：不画连接线、校徽与文字垂直居中、整体右移 */
+.timeline-single { margin-left: 24px; }
+.timeline-single::before { display: none; }
+.timeline-single .timeline-icon { top: 50%; transform: translateY(-50%); }
+.timeline-single .timeline-item { padding-left: 74px; }
+.timeline-item {
+    position: relative;
+    padding-left: 66px;
+    margin-bottom: 30px;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+/* 图标圆点（即“点”），白环让主线在圆后断开 */
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e6f4f1;
+    border: 2px solid #2fa8d0;
+    color: #2fa8d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 0 0 0 4px #fff;
+}
+.timeline-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+/* 校徽 logo 图标：白底、无边框、放大，让校徽自身更突出 */
+.timeline-icon.is-logo {
+    background: #fff;
+    border: none;
+    box-shadow: none;
+    width: 60px;
+    height: 60px;
+    left: -5px;            /* 让 60px 圆仍以主线(25px)为圆心 */
+}
+.timeline-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+    box-sizing: border-box;
+}
+.timeline-icon.is-logo img { padding: 0; }
+/* 时间轴正文 */
+.timeline-body { min-width: 0; }
 
 /* ============ ③ 手机端适配 ============ */
 @media (max-width: 768px) {
@@ -174,9 +257,15 @@ a:hover { text-decoration: underline; }
         padding: 28px 20px;
         text-align: center;
         border-right: none;
-        border-bottom: 1px solid #eef0f4;
+        border-top: 5px solid #2fa8d0;
+        border-bottom: 1px solid #d7ece9;
     }
     .sidebar .avatar { width: 100px; height: 100px; }
     .topnav { padding: 10px 20px; gap: 16px; }
     .content { padding: 24px 20px 48px; }
+    .timeline::before { left: 22px; }
+    .timeline-item { padding-left: 56px; }
+    .timeline-icon { width: 44px; height: 44px; }
+    .timeline-icon svg { width: 21px; height: 21px; }
+    .timeline-icon.is-logo { width: 48px; height: 48px; left: -2px; }
 }
