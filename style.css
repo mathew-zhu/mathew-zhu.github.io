@@ -28,18 +28,17 @@ a:hover { color: #2fa8d0; }
     background: linear-gradient(180deg, #e6f4f1 0%, #eefaf8 100%);
     border-right: 1px solid #d7ece9;
     border-top: 5px solid #2fa8d0;   /* 顶部亮青蓝装饰条 */
-    padding: 40px 26px;
+    padding: 70px 26px 40px;
     position: sticky;
     top: 0;
     height: 100vh;
     overflow-y: auto;
 }
 .sidebar .avatar {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    border-radius: 8px;              /* 直角+轻微圆角，去掉圆形裁剪 */
     object-fit: cover;
-    border: 3px solid #2fa8d0;        /* 亮青蓝头像描边 */
     display: block;
     margin: 0 auto 18px;
 }
